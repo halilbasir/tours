@@ -1,0 +1,399 @@
+/* Основные стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #f04;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #f04;
+}
+
+/* Гамбургер-меню */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* Герой-секция */
+.hero {
+    background: url('assets/dagestan.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+/*    padding: 0 20px;*/
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s ease-in-out;
+    z-index: 1;
+}
+
+.hero .button {
+    background-color: #f04;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.hero .button:hover {
+    background-color: #c00;
+}
+
+/* Туры */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 20px;
+}
+
+.card .content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card .content p {
+    color: #666;
+}
+
+/* Контакты */
+/* Основные стили для секции контактов */
+#contact {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+#contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Стили для контейнера ссылок с использованием CSS Grid */
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки одинаковой ширины */
+    gap: 20px;
+}
+
+/* Стили для каждой ссылки */
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-link img {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.contact-link span {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Hover эффект */
+.contact-link:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+/* Мобильные устройства - ссылки в одну колонку */
+@media (max-width: 768px) {
+    .contact-links {
+        grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+    }
+}
+
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #f04;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider {
+        position: relative;
+        overflow: hidden;
+    }
+    .slider img {
+        display: block;
+        width: 100%;
+        height: 300px; 
+    }
+   .slider .prev,
+    .slider .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        border-radius: 50%; /* Для создания круглых стрелок */
+        text-align: center;
+        line-height: 30px; /* Чтобы центрировать текст внутри стрелок */
+        font-size: 20px; /* Размер шрифта */
+        color: #555; /* Цвет текста */
+    }
+    .slider .prev {
+        left: 10px;
+    }
+    .slider .next {
+        right: 10px;
+    }
+
+    /* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+        font-size: 0.9em;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .apartment-slider .slide {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        font-size: 0.8em;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .apartment-slider .slide {
+        padding: 5px;
+    }
+}
